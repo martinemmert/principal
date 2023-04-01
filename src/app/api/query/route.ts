@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     console.error(e.message);
 
     return NextResponse.json(
-      { response: [{ index: 1, text: "Error" }] },
+      { response: [{ index: 1, message: { content: `Error: ${e.message}` } }] },
       { status: 200 }
     );
   }
